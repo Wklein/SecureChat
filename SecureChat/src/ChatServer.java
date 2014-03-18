@@ -28,6 +28,9 @@ import java.util.*;
  */
 public class ChatServer {
 
+    private int k1;
+    private int k2;
+	
     /**
      * The port that the server listens on.
      */
@@ -38,6 +41,7 @@ public class ChatServer {
      * so that we can check that new clients are not registering name
      * already in use.
      */
+    
     private static List<User> currentUsers = new ArrayList<User>();
 	
 	private static List<User> masterUserList = new ArrayList<User>();

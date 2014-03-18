@@ -8,14 +8,14 @@ public class RSAKeyGen {
 		File pubKeyFile = new File("pub_key.txt");
 		File priKeyFile = new File("pri_key.txt");
 		
-		BigInteger p = BigInteger.probablePrime(12, new Random());
-		BigInteger q = BigInteger.probablePrime(12, new Random());
+		BigInteger p = BigInteger.probablePrime(32, new Random());
+		BigInteger q = BigInteger.probablePrime(32, new Random());
 		
 //		BigInteger p = BigInteger.probablePrime(args[0], new Random());
 //		BigInteger q = BigInteger.probablePrime(args[0], new Random());
 		
 		BigInteger n = p.multiply(q);
-		BigInteger totN = n.subtract(p).subtract(q).subtract(BigInteger.ONE);
+		BigInteger totN = n.subtract(p).subtract(q).add(BigInteger.ONE);
 		
 		p = null;
 		q = null;
@@ -41,11 +41,8 @@ public class RSAKeyGen {
 		pub.close();
 		pri.close();
 		
-		System.out.println("p = " + p);
-		System.out.println("q = " + q);
-		System.out.println("n = " + n);
-		System.out.println("totN = " + totN);
-		System.out.println("e = " + e);
-		System.out.println("d = " + d);
+		
 	}
+	
+
 }
